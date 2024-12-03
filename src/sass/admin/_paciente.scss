@@ -1,0 +1,44 @@
+@use '@sass/base/variables' as v;
+@use '@sass/base/mixins' as m;
+@use 'sass:color';
+
+.paciente {
+   background-color: v.$blanco;
+   padding: 2rem;
+   border-radius: 1rem;
+   margin-bottom: 2rem;
+   @include m.sombra;
+
+   &__texto {
+      color: color.adjust(v.$azul, $lightness: -15%);
+      font-weight: v.$bold;
+      margin: 0;
+      margin-bottom: 1rem;
+
+      &--span {
+         font-weight: v.$regular;
+      }
+   }
+
+   &__acciones {
+      padding-top: 1rem;
+      display: flex;
+      gap: 1rem;
+      justify-content: space-between;
+   }
+
+   &__boton {
+      @include m.boton(v.$azul, v.$blanco);
+      &{
+         width: auto;
+         padding: 1rem 3rem;
+      }
+
+      &--eliminar {
+         @include m.boton(v.$error, v.$blanco);
+         &{
+            width: auto;
+         }
+      }
+   }
+}

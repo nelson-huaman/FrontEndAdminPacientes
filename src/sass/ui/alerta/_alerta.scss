@@ -1,0 +1,20 @@
+@use '@sass/base/variables' as v;
+@use "sass:color";
+
+.alerta {
+   padding: .6rem 1rem .8rem 2rem;
+   margin: 1rem 0;
+   font-weight: v.$bold;
+   text-align: center;
+   border-radius: .5rem;
+
+   &--error {
+      background-color: color.adjust(v.$error, $lightness: 60%);
+      color: v.$error;
+   }
+
+   &--exito {
+      background-color: color.adjust(v.$exito, $lightness: 40%);
+      color: color.adjust(v.$exito, $lightness: -20%);
+   }
+}

@@ -1,0 +1,18 @@
+@use '@sass/base/variables' as v;
+@use '@sass/base/mixins' as m;
+@use 'sass:color';
+
+.nav {
+   display: flex;
+   gap: 2rem;
+   @include m.contenedor;
+   padding: 3rem 0;
+   justify-content: center;
+   @include m.tablet {
+      justify-content: flex-start;
+   }
+
+   &__enlace {
+      @include m.enlace;
+   }
+}

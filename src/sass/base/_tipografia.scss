@@ -1,0 +1,41 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+h1, h2, h3, h4 {
+   @include m.heading;
+}
+
+h1 {
+   font-size: 2.6rem;
+}
+
+h2 {
+   font-size: 2.3rem;
+}
+
+h3 {
+   font-size: 2rem;
+}
+
+h4 {
+   font-size: 1.7rem;
+}
+
+p {
+   font-size: 1.5rem;
+   color: v.$negro;
+   font-weight: v.$regular;
+   line-height: 1.5;
+}
+
+.text-center {
+   text-align: center;
+}
+
+[class$="__heading"] {
+   @include m.nombrePagina;
+}
+
+[class$="__descripcion"] {
+   @include m.decripcionPagina;
+}

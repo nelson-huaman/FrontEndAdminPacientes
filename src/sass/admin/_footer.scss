@@ -1,0 +1,17 @@
+@use '@sass/base/variables' as v;
+@use '@sass/base/mixins' as m;
+@use 'sass:color';
+
+.footer {
+   padding: 3rem 0;
+   background-color: color.adjust(v.$blanco, $lightness: -10%);
+
+   &__texto {
+      text-align: center;
+      font-weight: v.$bold;
+
+      &--span {
+         color: v.$azul;
+      }
+   }
+}

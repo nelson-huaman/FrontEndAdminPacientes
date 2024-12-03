@@ -1,0 +1,51 @@
+@use '@sass/base/variables' as v;
+@use '@sass/base/mixins' as m;
+@use 'sass:color';
+
+.main {
+   display: flex;
+   flex-direction: column;
+   text-align: center;
+   justify-content: center;
+   height: 100vh;
+   background-color: color.adjust(v.$blanco, $lightness: -5%);
+}
+
+.auth {
+   @include m.contenedorSM;
+   @include m.sombra;
+   padding: 4rem 3rem;
+   border-radius: 2rem;
+   background-color: v.$blanco;
+   text-align: left;
+   
+   &__nombre {
+      @include m.nombrePagina;
+      color: v.$azul;
+
+      &--span {
+         color:  v.$negro;
+      }
+   }
+
+   &__footer {
+      margin-top: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      gap: 2rem;
+
+      @include m.desktop {
+         flex-direction: row;
+         justify-content: space-between;
+      }
+   }
+
+   &__enlace {
+      color: color.adjust(v.$blanco, $lightness: -60%);
+      &:hover {
+         color: v.$azul;
+      }
+   }
+
+}
